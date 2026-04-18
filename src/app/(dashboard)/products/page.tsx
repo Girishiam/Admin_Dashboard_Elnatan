@@ -155,7 +155,7 @@ export default function ProductsPage() {
                 const inStock = p.inventory > 0;
                 return (
                   <tr key={p.id} className="hover:bg-muted/30 transition-colors">
-                    <td className="px-5 py-4 whitespace-nowrap">
+                    <td className="px-5 py-2.5 whitespace-nowrap">
                       <div className="flex items-center gap-3">
                         <div className="h-10 w-10 shrink-0 rounded-lg overflow-hidden border border-black/5 bg-slate-100">
                           <img src={p.image} alt={p.name} className="h-10 w-10 object-cover" />
@@ -163,10 +163,10 @@ export default function ProductsPage() {
                         <span className="font-medium text-foreground">{p.name}</span>
                       </div>
                     </td>
-                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.category}</td>
-                    <td className="px-5 py-4 whitespace-nowrap text-foreground">${p.price}</td>
-                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.inventory} in stock</td>
-                    <td className="px-5 py-4 whitespace-nowrap">
+                    <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{p.category}</td>
+                    <td className="px-5 py-2.5 whitespace-nowrap text-foreground">${p.price}</td>
+                    <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{p.inventory} in stock</td>
+                    <td className="px-5 py-2.5 whitespace-nowrap">
                       <span className={cn(
                         "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
                         inStock
@@ -176,7 +176,7 @@ export default function ProductsPage() {
                         {inStock ? 'In Stock' : 'Out of Stock'}
                       </span>
                     </td>
-                    <td className="px-5 py-4 whitespace-nowrap">
+                    <td className="px-5 py-2.5 whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => openEdit(p)}

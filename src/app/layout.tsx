@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.className} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html lang="en" className={`${manrope.className} antialiased`}>
+      <body className="h-screen overflow-hidden bg-background text-foreground">
         <DashboardProvider>
           {children}
           <Toaster position="top-right" richColors />

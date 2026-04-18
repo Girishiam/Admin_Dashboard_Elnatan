@@ -7,17 +7,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-muted/40 overflow-hidden">
-      {/* Desktop Sidebar */}
+    <div className="flex h-full bg-muted/40">
       <Sidebar />
-
-      {/* Main Content Area */}
-      <div className="flex flex-1 flex-col min-h-0">
-        {/* Header Component */}
+      <div className="flex flex-1 flex-col overflow-hidden">
         <Header />
-
-        {/* Page Content — only this div scrolls */}
-        <main className="flex-1 overflow-y-scroll bg-muted/40">
+        <main className="flex-1 overflow-y-auto bg-muted/40">
           {children}
         </main>
       </div>
