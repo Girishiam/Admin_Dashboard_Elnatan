@@ -135,6 +135,7 @@
   to   { opacity: 1; }
 }
 
-main > * {
-  animation: page-fade-in 120ms ease-out;
+/* Target the direct child of main (the page root div or loading div) */
+main > div {
+  animation: page-fade-in 80ms ease-out both;
 }
