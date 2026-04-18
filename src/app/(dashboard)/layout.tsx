@@ -17,7 +17,7 @@ export default function DashboardLayout({
         <Header />
 
         {/* Page Content — only this div scrolls */}
-        <main className="flex-1 overflow-y-auto bg-muted/40">
+        <main className="flex-1 overflow-y-scroll bg-muted/40">
           {children}
         </main>
       </div>
