@@ -122,9 +122,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-muted/40 text-foreground;
   }
   html {
     @apply font-sans;
   }
+}
+
+/* Smooth page-content transition — eliminates white flash on sidebar navigation */
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+main > * {
+  animation: page-fade-in 120ms ease-out;
 }
