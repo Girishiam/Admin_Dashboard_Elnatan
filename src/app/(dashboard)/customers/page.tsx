@@ -230,7 +230,7 @@ export default function CustomersPage() {
           <tbody className="divide-y divide-black/5">
             {pageCustomers.map(c => (
               <tr key={c.id} className="hover:bg-muted/20 transition-colors">
-                <td className="px-5 py-4 whitespace-nowrap">
+                <td className="px-5 py-2.5 whitespace-nowrap">
                   <div className="flex items-center gap-3">
                     <Avatar name={c.name} size="sm" />
                     <div>
@@ -243,11 +243,11 @@ export default function CustomersPage() {
                     </div>
                   </div>
                 </td>
-                <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{c.email}</td>
-                <td className="px-5 py-4 whitespace-nowrap font-medium text-foreground">${c.spent.toFixed(2)}</td>
-                <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{c.orders}</td>
-                <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{c.lastOrder}</td>
-                <td className="px-5 py-4 whitespace-nowrap">
+                <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{c.email}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap font-medium text-foreground">${c.spent.toFixed(2)}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{c.orders}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{c.lastOrder}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap">
                   <CustomerMenu customer={c} onView={() => setViewCustomer(c)} onEdit={() => openEdit(c)} onDelete={() => setDeleteCustomer(c)} />
                 </td>
               </tr>
@@ -292,7 +292,7 @@ export default function CustomersPage() {
                   { label: 'Total Orders', value: viewCustomer.orders, icon: ShoppingBag },
                   { label: 'Member Since', value: viewCustomer.joined, icon: Calendar },
                 ].map(({ label, value, icon: Icon }) => (
-                  <div key={label} className="flex flex-col items-center gap-1 py-4 px-3 text-center">
+                  <div key={label} className="flex flex-col items-center gap-1 py-2.5 px-3 text-center">
                     <Icon className="h-4 w-4 text-muted-foreground" />
                     <p className="text-base font-semibold text-foreground">{value}</p>
                     <p className="text-xs text-muted-foreground">{label}</p>
@@ -301,7 +301,7 @@ export default function CustomersPage() {
               </div>
 
               {/* Order history */}
-              <div className="px-6 py-4">
+              <div className="px-6 py-2.5">
                 <h4 className="text-sm font-semibold mb-3">Order History</h4>
                 <div className="rounded-xl border border-black/8 overflow-hidden divide-y divide-black/5">
                   {viewCustomer.orderHistory.map(o => (
@@ -323,7 +323,7 @@ export default function CustomersPage() {
             </div>
           )}
 
-          <div className="border-t border-black/5 px-6 py-4 flex justify-end">
+          <div className="border-t border-black/5 px-6 py-2.5 flex justify-end">
             <Button variant="outline" onClick={() => setViewCustomer(null)} className="h-10 px-6 rounded-xl">Close</Button>
           </div>
         </DialogContent>
@@ -359,7 +359,7 @@ export default function CustomersPage() {
             </div>
           </div>
 
-          <div className="flex flex-col-reverse sm:flex-row gap-3 border-t border-black/5 px-6 py-4">
+          <div className="flex flex-col-reverse sm:flex-row gap-3 border-t border-black/5 px-6 py-2.5">
             <Button variant="outline" onClick={() => setEditCustomer(null)} className="w-full sm:w-auto h-10 px-6 rounded-xl">Cancel</Button>
             <Button onClick={saveEdit} className="w-full sm:w-auto h-10 px-6 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white">Save Changes</Button>
           </div>
