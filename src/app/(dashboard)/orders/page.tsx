@@ -311,22 +311,22 @@ export default function OrdersPage() {
           <tbody className="divide-y divide-black/5">
             {pageOrders.map((order) => (
               <tr key={order.id} className="hover:bg-muted/20 transition-colors">
-                <td className="px-5 py-4 whitespace-nowrap">
+                <td className="px-5 py-2.5 whitespace-nowrap">
                   <button onClick={() => setViewOrder(order)}
                     className="font-medium text-[#3B82F6] hover:text-[#2563EB] hover:underline underline-offset-2 transition-colors">
                     {order.id}
                   </button>
                 </td>
-                <td className="px-5 py-4 whitespace-nowrap text-foreground">{order.customer}</td>
-                <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{order.date}</td>
-                <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{order.orderItems.length}</td>
-                <td className="px-5 py-4 whitespace-nowrap text-foreground">${order.total.toFixed(2)}</td>
-                <td className="px-5 py-4 whitespace-nowrap">
+                <td className="px-5 py-2.5 whitespace-nowrap text-foreground">{order.customer}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{order.date}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap text-muted-foreground">{order.orderItems.length}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap text-foreground">${order.total.toFixed(2)}</td>
+                <td className="px-5 py-2.5 whitespace-nowrap">
                   <span className={cn("inline-flex items-center rounded-full px-3 py-1 text-xs font-medium", STATUS_STYLES[order.status])}>
                     {order.status}
                   </span>
                 </td>
-                <td className="px-5 py-4 whitespace-nowrap text-right">
+                <td className="px-5 py-2.5 whitespace-nowrap text-right">
                   <OrderMenu
                     order={order}
                     onView={() => setViewOrder(order)}
@@ -378,7 +378,7 @@ export default function OrdersPage() {
               {/* Order card */}
               <div className="rounded-xl border border-black/8 overflow-hidden">
                 {/* Order header */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-5 py-4 border-b border-black/5">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-5 py-2.5 border-b border-black/5">
                   <div>
                     <p className="font-semibold text-foreground">Order {viewOrder.id}</p>
                     <p className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
@@ -401,7 +401,7 @@ export default function OrdersPage() {
                 {/* Items */}
                 <div className="divide-y divide-black/5">
                   {viewOrder.orderItems.map((item, i) => (
-                    <div key={i} className="flex items-center justify-between gap-4 px-5 py-4">
+                    <div key={i} className="flex items-center justify-between gap-4 px-5 py-2.5">
                       <div className="flex items-center gap-4">
                         <div className="h-16 w-16 shrink-0 rounded-lg overflow-hidden border border-black/5 bg-slate-100">
                           <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
@@ -419,7 +419,7 @@ export default function OrdersPage() {
                 </div>
 
                 {/* Footer: tracking + total */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-5 py-4 border-t border-black/5 bg-muted/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-5 py-2.5 border-t border-black/5 bg-muted/10">
                   <p className="text-xs text-muted-foreground">
                     Tracking: <span className="font-mono">{viewOrder.trackingNumber}</span>
                   </p>
@@ -429,7 +429,7 @@ export default function OrdersPage() {
             </div>
           )}
 
-          <div className="border-t border-black/5 px-6 py-4 flex justify-end">
+          <div className="border-t border-black/5 px-6 py-2.5 flex justify-end">
             <Button variant="outline" onClick={() => setViewOrder(null)} className="h-10 px-6 rounded-xl">
               Close
             </Button>

@@ -23,7 +23,7 @@ export function Sidebar() {
   }
 
   return (
-    <aside className="hidden h-screen w-64 flex-col border-r-0 md:flex bg-linear-to-b from-[#2A77DB] to-[#000000] text-white">
+    <aside className="hidden h-screen w-64 flex-col border-r-0 md:flex bg-linear-to-b from-[#2A77DB] to-[#000000] text-white sticky top-0 self-start">
       <Link href="/" className="flex h-32 items-center justify-center border-b border-white/10 px-4 mt-2 hover:opacity-90 transition-opacity">
         <div className="relative h-24 w-48">
           <Image
